@@ -3,8 +3,8 @@
   </head>
   
   <body>
-      <div class="sidenav" id="myDIV"  >
-          <div class="nav-container" >
+      <div class="sidenav" id="myDIV" [ngStyle]="styleObject()" >
+          <div class="nav-container"  >
          
               <div class="link_container" routerLinkActive="active-link"  (click)="ShowTable()">
         
@@ -21,7 +21,7 @@
         
       
                 <div class="img_container">
-                  <img src="/assets/baseline-lock-24px.svg">   <a  >Log out</a>
+                  <img src="/assets/baseline-lock-24px.svg">   <a  >{{'LOGOUT'| translate}}</a>
                 </div>
                 </div>
           </div>
@@ -30,28 +30,27 @@
        
 
      
-    <div id="card-container" *ngIf="this.showUsers">
-      <div>
-        <h2>{{ "HOME.TITLE" | translate }}</h2>
-        <label>
-          {{ "HOME.SELECT" | translate }}
-          <select #langSelect (change)="translate.use(langSelect.value)">
-            <option *ngFor="let lang of translate.getLangs()" [value]="lang" [selected]="lang === translate.currentLang">{{ lang }}</option>
-          </select>
-        </label>
-      </div>
+    <div [ngStyle]="stylecardarabic()" id="card-container" *ngIf="this.showUsers">
+ <div style="display: flex;justify-content: center;margin-bottom: 30px">
+    <select style="width: 330%" class="form-control" id="sel1" #select (change)="changeLangage(select.value)">
+        <option selected>select language</option>
+        <option value="ar">عربي</option>
+        <option value="en">english</option>
+      </select>
+ </div>
+
         <div class="table-responsive">
             <table class="table table-bordered table-striped">
               <thead>
                 <tr>
                   <th>#</th>
-                  <th>Name</th>
-                  <th>Phone</th>
-                  <th>Images</th>
-                  <th>Email</th>
-                  <th>Edit user</th>
+                  <th> {{"USERNAME" | translate}}</th>
+                  <th>{{"USERPHONE" | translate}}</th>
+                  <th>{{"USERIMAGE" | translate}}</th>
+                  <th>{{"USEREMAIL" | translate}}</th>
+                  <th>{{"EDITUSER" | translate}}</th>
                   <th>                      <button class="btn" (click)="addNewUser()"><i class="fa fa-plus" aria-hidden="true" ></i> 
-                    Create new user</button>
+                    {{"AddUser" | translate}}</button>
                   </th>
 
                 </tr>
@@ -70,7 +69,7 @@
                   </td>
                   <td>{{user.email}}</td>
                   <td>
-                      <button class="btn" (click)="openEditDialog(user)"><i class='fas fa-pen'></i> Edit</button> &nbsp;
+                      <button class="btn" (click)="openEditDialog(user)"><i class='fas fa-pen'></i>{{"EDIT"|translate}} </button> &nbsp;
                   </td>
 
                 </tr>

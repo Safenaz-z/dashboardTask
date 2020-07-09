@@ -9,6 +9,8 @@ import { EditModalComponent } from '../edit-modal/edit-modal.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
+import { HttpClient } from '@angular/common/http';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 @NgModule({
   declarations: [DashboardComponent,EditModalComponent],
@@ -18,7 +20,16 @@ import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
     DashboardRoutingModule,MatDialogModule,
     ReactiveFormsModule,
     FormsModule,
-    TranslateModule.forRoot()
+    TranslateModule.forRoot({
+      loader: {
+          provide: TranslateLoader,
+          useFactory: (createTranslateLoader),
+          deps: [HttpClient]
+      }
+  })
   ]
 })
 export class DashboardModule { }
+export function createTranslateLoader(http: HttpClient) {
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+}

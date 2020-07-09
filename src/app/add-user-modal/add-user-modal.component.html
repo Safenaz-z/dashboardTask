@@ -15,11 +15,12 @@
 
         <div class="grid-style">
           <p>
-            User Data </p>
+              {{"USERDATA" | translate}}
+            </p>
         </div>
         <div class="grid-style">
           <p>
-            Image </p>
+              {{"USERIMAGE" | translate}} </p>
         </div>
       </div>
       <div class="grid-container">
@@ -81,7 +82,7 @@
           Passwords do not match
         </div>  --> 
       <div class="errors">
-        {{ userForm.errors.message }} 
+        {{ userForm.errors?.message }} 
 
       </div>
 
@@ -112,8 +113,8 @@
     
 
       <div class="btn-container">
-        <button type="button" id="btnstyle" class="btn btn-success" (click)="onNoClick()">CANCEL</button>
-        <button type="submit" id="btnstyle2" class="btn btn-success">SAVE</button>
+        <button type="button" id="btnstyle" class="btn btn-success" (click)="onNoClick()">{{"CANCLE" | translate}}</button>
+        <button type="submit" id="btnstyle2" class="btn btn-success">{{"SAVE" | translate}}</button>
       </div>
 
     </div>

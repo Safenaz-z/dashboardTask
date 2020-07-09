@@ -1,6 +1,15 @@
 {
-  "HOME": {
-    "TITLE": "Hello Angular with ngx-translate!",
-    "SELECT": "Change language"
-  }
+  "USERS": "Users",
+  "LOGOUT": "Log out",
+  "USERNAME": "Name",
+  "USEREMAIL": "E-mail",
+  "USERPHONE": "Phone",
+  "USERIMAGE": "Image",
+  "EDITUSER": "Edit user",
+  "AddUser": "Create new user",
+  "EDIT": "Edit",
+  "USERDATA":"User data",
+  "SAVE":"Save",
+  "CANCLE":"Cancel"
+
 }

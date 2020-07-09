@@ -19,7 +19,8 @@ users:any=[]
 showUsers:boolean=false
 changedArray:any={}
 LoggedIn:string;
-
+language:any
+positon:any="fixed"
   constructor(public dialog: MatDialog , private router: Router,public translate:TranslateService) {
     this.changedArray=localStorage.getItem('userData')
    console.log( this.changedArray)
@@ -30,9 +31,50 @@ LoggedIn:string;
     translate.use(browserLang.match(/en|fr/) ? browserLang : 'en');
    }
    changeLangage(lang: string) {
+     let dir;
+     let position;
+     let html=document.documentElement;
+     if(lang=='en'){
+       dir='ltr';
+     }
+     else{
+       dir='rtl'
+     }
+     if(lang=='en'){
+       
+      
+      
+    }
+    else{
+      dir='rtl'
+    }
+     let menu=document.getElementById('myDIV')
+html.setAttribute("lang",lang);
+html.setAttribute("dir",dir)
      console.log(lang)
     this.translate.setDefaultLang(lang);
     this.translate.use(lang);
+    localStorage.setItem('lang',lang)
+this.language=lang
+ }
+ styleObject(){
+  if(this.language =='en'){
+     
+  }
+  else{
+    return {position:'fixed',right: 0,
+    width: '130px'}
+
+  }
+ }
+ stylecardarabic(){
+  if(this.language =='en'){
+     
+  }
+  else{
+    return { 'margin-right': '150px'}
+
+  }
  }
    ShowTable(){
 this.showUsers= true
