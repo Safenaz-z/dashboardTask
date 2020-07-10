@@ -11,7 +11,6 @@ import { MaterialsModule } from './materials/materials.module';
 import { AddUserModalComponent } from './add-user-modal/add-user-modal.component';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { ArabicDashboardComponent } from './arabic-dashboard/arabic-dashboard.component';
 import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
 import {TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
@@ -20,7 +19,6 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
   declarations: [
     AppComponent,
     AddUserModalComponent,
-    ArabicDashboardComponent,
   ],
   entryComponents:[
     AddUserModalComponent,
